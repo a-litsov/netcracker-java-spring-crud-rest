@@ -6,7 +6,13 @@ import java.util.List;
 
 public interface BuyersDAO {
 
-    public Buyer getBuyer(int id);
+    Buyer getBuyer(int id);
 
-    public List<Buyer> getBuyers();
+    List<Buyer> getBuyers();
+
+    boolean addBuyer(Buyer buyer);
+
+    boolean deleteBuyers();
+
+    boolean deleteBuyer(int id);
 }
