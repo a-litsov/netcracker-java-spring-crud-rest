@@ -18,7 +18,6 @@ public class BuyerController {
 
     @GetMapping()
     public List<Buyer> getBuyers() {
-        List<Buyer> buyers = dao.getBuyers();
         return dao.getBuyers();
     }
 
@@ -30,7 +29,7 @@ public class BuyerController {
     @PostMapping(consumes="application/json")
     public Status addBuyer(@RequestBody Buyer buyer) {
         if (dao.addBuyer(buyer)) {
-            return Status.OK.setDescription("Buyer successfully added with id:" + buyer.getId());
+            return Status.OK.setDescription("Buyer successfully added with id: " + buyer.getId());
         } else {
             return Status.FAIL.setDescription("Error while adding buyer");
         }
